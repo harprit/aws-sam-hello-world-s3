@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.harprit.aws.sam</groupId>
-	<artifactId>aws-sam-hello-world-s3</artifactId>
+	<artifactId>aws-sam-helloworlds3</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
