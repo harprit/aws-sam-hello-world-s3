@@ -4,11 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.harprit.aws.sam</groupId>
-	<artifactId>helloworlds3</artifactId>
+	<artifactId>aws-sam-hello-world-s3</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-
-	<name>helloworlds3</name>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
