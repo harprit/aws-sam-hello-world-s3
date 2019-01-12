@@ -34,7 +34,13 @@
 			<artifactId>aws-lambda-java-events</artifactId>
 			<version>2.2.4</version>
 		</dependency>
-
+		
+		<dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-dynamodb</artifactId>
+            <version>1.11.481</version>
+        </dependency>
+        
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

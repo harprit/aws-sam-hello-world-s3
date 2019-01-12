@@ -8,6 +8,11 @@ Resources:
       CodeUri: target/aws-sam-helloworlds3-1.0.jar
       Handler: com.harprit.aws.sam.helloworlds3.App::handleRequest
       Runtime: java8
+      Timeout: 300
+      Policies: AmazonDynamoDBFullAccess
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref MyTable
       Events:
         BucketEvent1:
           Type: S3
@@ -18,7 +23,12 @@ Resources:
             - s3:ObjectCreated:*
   MyBucket:
     Type: AWS::S3::Bucket
+  
+  MyTable:
+    Type: AWS::Serverless::SimpleTable
     
 Outputs:
-  BucketName:
+  MyBucketName:
     Value: !Ref MyBucket
+  MyTableName:
+    Value: !Ref MyTable
