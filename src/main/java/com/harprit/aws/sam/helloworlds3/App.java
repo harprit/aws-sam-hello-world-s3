@@ -26,16 +26,16 @@ public class App {
 
 		S3Entity s3Entity = s3Event.getRecords().get(0).getS3();
 		String key = s3Entity.getObject().getKey();
-		System.out.format("There's a new file named %s in %s bucket", key, s3Entity.getBucket().getName());
+		System.out.format("There's a new file named %s in %s bucket\n", key, s3Entity.getBucket().getName());
 		
 		return key;
 	}
 
 	private void putFileNameInDB(String fileName) {
 		
-		System.out.format("Inserting file name: %s into tbale name: %s", fileName, table.getTableName());
+		System.out.format("Inserting file name: %s into tbale name: %s\n", fileName, table.getTableName());
 		
-		Item item = new Item().withPrimaryKey("id", "fileName").withLong("timestamp", new Date().getTime());
+		Item item = new Item().withPrimaryKey("id", fileName).withLong("timestamp", new Date().getTime());
 		
 		table.putItem(item);
 	}
