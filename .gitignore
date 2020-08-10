@@ -1,5 +1,11 @@
-.aws-sam
+.aws-sam/
+
+samconfig.toml
+
 aws-sam-hello-world-s3-java/.idea/
+
 aws-sam-hello-world-s3-java/target/
+
 aws-sam-hello-world-s3-java/dependency-reduced-pom.xml
+
 aws-sam-hello-world-s3-java/helloworlds3.iml

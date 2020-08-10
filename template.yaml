@@ -6,11 +6,13 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: aws-sam-hello-world-s3-java
-      Handler: com.harprit.aws.sam.helloworlds3.App::handleRequest
+      Handler: com.harprit.helloworlds3.App::handleRequest
       Runtime: java8
       Timeout: 300
       MemorySize: 512
-      Policies: AmazonDynamoDBFullAccess
+      Policies:
+      - DynamoDBWritePolicy:
+          TableName: !Ref MyTable
       Environment:
         Variables:
           TABLE_NAME: !Ref MyTable

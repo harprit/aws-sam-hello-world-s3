@@ -28,7 +28,7 @@ public class App {
         S3Entity s3Entity = s3Event.getRecords().get(0).getS3();
         String bucketName = s3Entity.getBucket().getName();
         String fileName = s3Entity.getObject().getKey();
-        System.out.format("There's a new file named %s in %s bucket\n", fileName, bucketName);
+        System.out.println("Processing new S3 file: " + fileName);
 
         String fileContent = loadS3FileContent(bucketName, fileName);
 
@@ -46,11 +46,13 @@ public class App {
     }
 
     private void putFileContentInDB(String fileName, String fileContent) {
-        System.out.format("Inserting content of file %s into table: %s\n", fileName, table.getTableName());
+        System.out.println("Inserting S3 file content into table: " +  table.getTableName());
+
+        System.out.println("fileContent: " + fileContent);
+
         Item item = new Item()
-                .withPrimaryKey("fileName", fileName)
-                .withLong("timestamp", new Date().getTime())
-                .withString("fileContent", fileContent);
+                .withString("Id", fileName)
+                .withString("FileContent", fileContent);
         table.putItem(item);
     }
 }
