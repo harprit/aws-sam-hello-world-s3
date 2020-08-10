@@ -5,7 +5,7 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: target/aws-sam-helloworlds3-1.0.jar
+      CodeUri: aws-sam-hello-world-s3-java
       Handler: com.harprit.aws.sam.helloworlds3.App::handleRequest
       Runtime: java8
       Timeout: 300
